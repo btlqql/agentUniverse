@@ -66,6 +66,7 @@ class LLM(ComponentBase):
         super().__init__(component_type=ComponentEnum.LLM, **kwargs)
 
     def init_channel(self):
+        """Initialize channel."""
         if self.channel and not self._channel_instance:
             llm_channel: LLMChannel = LLMChannelManager().get_instance_obj(
                 component_instance_name=self.channel)
