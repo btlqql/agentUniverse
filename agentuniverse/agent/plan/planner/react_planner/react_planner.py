@@ -157,6 +157,7 @@ def create_react_agent(
         stop_sequence: Union[bool, List[str]] = True,
         bind_params: Optional[dict],
 ) -> Runnable:
+    """Create react agent."""
     missing_vars = {"tools", "tool_names", "agent_scratchpad"}.difference(
         prompt.input_variables + list(prompt.partial_variables)
     )
