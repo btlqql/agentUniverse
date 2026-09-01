@@ -63,6 +63,7 @@ class QWenOpenAIStyleLLM(OpenAIStyleLLM):
         return await super()._acall(messages, **kwargs)
 
     def max_context_length(self) -> int:
+        """Max Context Length."""
         if super().max_context_length():
             return super().max_context_length()
         return QWen_Max_CONTEXT_LENGTH.get(self.model_name, 8000)
