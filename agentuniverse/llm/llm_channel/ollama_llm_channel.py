@@ -27,6 +27,7 @@ class OllamaLLMChannel(LLMChannel):
         return self
 
     def as_langchain(self) -> BaseLanguageModel:
+        """As Langchain."""
         return OllamaChannelLangchainInstance(self)
 
     def _new_client(self):
