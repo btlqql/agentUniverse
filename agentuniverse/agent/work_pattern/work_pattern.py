@@ -61,4 +61,5 @@ class WorkPattern(ComponentBase):
         return self
 
     def set_by_agent_model(self, **kwargs):
+        """Set by agent model."""
         pass
