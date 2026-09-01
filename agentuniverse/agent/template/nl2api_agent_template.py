@@ -15,6 +15,7 @@ from agentuniverse.base.config.component_configer.configers.agent_configer impor
 class Nl2ApiAgentTemplate(AgentTemplate):
 
     def input_keys(self) -> list[str]:
+        """Input Keys."""
         return ['input']
 
     def output_keys(self) -> list[str]:
