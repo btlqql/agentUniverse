@@ -70,6 +70,7 @@ class OllamaLLM(LLM):
             return self.agenerate_result(res)
 
     def generate_result(self, data):
+        """Generate result."""
         for line in data:
             yield LLMOutput(text=line.get("message").get('content'), raw=json.dumps(line))
 
