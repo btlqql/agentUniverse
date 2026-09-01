@@ -113,6 +113,7 @@ class MarkdownHeaderTextSplitter(DocProcessor):
         sections: List[Tuple[str, str]] = []
 
         def flush() -> None:
+            """Flush."""
             body = "\n".join(buffer).strip("\n")
             buffer.clear()
             if not body:
