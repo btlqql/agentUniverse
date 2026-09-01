@@ -17,6 +17,7 @@ from agentuniverse.base.util.logging.logging_util import LOGGER
 class ExpressingAgentTemplate(AgentTemplate):
 
     def input_keys(self) -> list[str]:
+        """Input Keys."""
         return ['input', 'executing_result']
 
     def output_keys(self) -> list[str]:
