@@ -12,6 +12,7 @@ from agentuniverse.agent.template.rag_agent_template import RagAgentTemplate
 class SummarizeRagAgentTemplate(RagAgentTemplate):
 
     def input_keys(self) -> list[str]:
+        """Input Keys."""
         return ['input', 'summarize_content']
 
     def output_keys(self) -> list[str]:
