@@ -76,6 +76,7 @@ class DefaultChannelLangchainInstance(ChatOpenAI):
         return await agenerate_from_stream(stream_iter)
 
     def as_langchain_chunk(self, stream, run_manager=None):
+        """As Langchain Chunk."""
         default_chunk_class = AIMessageChunk
         for llm_result in stream:
             chunk = llm_result.raw
