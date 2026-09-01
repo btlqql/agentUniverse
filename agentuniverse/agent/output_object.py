@@ -14,6 +14,7 @@ class OutputObject(object):
             self.__dict__[k] = v
 
     def to_dict(self):
+        """To Dict."""
         return self.__params.copy()
 
     def to_json_str(self):
