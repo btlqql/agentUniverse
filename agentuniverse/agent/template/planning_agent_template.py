@@ -19,6 +19,7 @@ from agentuniverse.base.util.logging.logging_util import LOGGER
 class PlanningAgentTemplate(AgentTemplate):
 
     def input_keys(self) -> list[str]:
+        """Input Keys."""
         return ['input']
 
     def output_keys(self) -> list[str]:
