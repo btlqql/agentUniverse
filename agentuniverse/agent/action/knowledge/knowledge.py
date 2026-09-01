@@ -381,6 +381,7 @@ class Knowledge(ComponentBase):
         )
 
     def create_copy(self):
+        """Create copy."""
         copied = self.model_copy()
         copied.stores = self.stores.copy()
         copied.query_paraphrasers = self.query_paraphrasers.copy()
