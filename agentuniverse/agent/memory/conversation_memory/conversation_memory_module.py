@@ -29,6 +29,7 @@ from agentuniverse.base.util.logging.logging_util import LOGGER
 
 
 def generate_relation_str(source: str, target: str, source_type: str, target_type: str, type: str):
+    """Generate relation str."""
     if source_type == 'agent' and target_type == 'agent' and type == 'input':
         return f"智能体 {source} 向智能体 {target} 提出了一个问题"
     if source_type == 'agent' and target_type == 'agent' and type == 'output':
