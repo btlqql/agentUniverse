@@ -29,7 +29,14 @@ LOGGER = GeneralLogger(STANDARD_LOG_SUFFIX, "", "", "", "", add_handler=False)
 
 
 def _standard_filter(record):
-    """Loguru filter keeping only records of the default log type."""
+    """Loguru filter that keeps only records of the default log type.
+
+    Args:
+        record: The loguru log record being filtered.
+
+    Returns:
+        bool: True when the record belongs to the default log type.
+    """
     return record["extra"].get('log_type') == LogTypeEnum.default
 
 
@@ -114,7 +121,14 @@ def _add_sls_log_handler():
     sls_sender.start_batch_send_thread()
 
     def _sls_filter(record):
-        """Loguru filter keeping records of the default or sls log type."""
+        """Loguru filter that keeps records of the default or sls log type.
+
+        Args:
+            record: The loguru log record being filtered.
+
+        Returns:
+            bool: True when the record belongs to the default or sls log type.
+        """
         return record["extra"].get('log_type') == LogTypeEnum.default or record["extra"].get('log_type') == LogTypeEnum.sls
     loguru.logger.add(
         sink=SlsSink(sls_sender),
@@ -143,7 +157,14 @@ def _add_sls_log_async_handler():
     loop.create_task(sls_sender.start())
 
     def _sls_filter(record):
-        """Loguru filter keeping records of the default or sls log type."""
+        """Loguru filter that keeps records of the default or sls log type.
+
+        Args:
+            record: The loguru log record being filtered.
+
+        Returns:
+            bool: True when the record belongs to the default or sls log type.
+        """
         return record["extra"].get('log_type') == LogTypeEnum.default or record["extra"].get('log_type') == LogTypeEnum.sls
     loguru.logger.add(
         sink=AsyncSlsSink(sls_sender),
